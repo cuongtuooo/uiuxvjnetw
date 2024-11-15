@@ -1,0 +1,38 @@
+/* list */
+.custom__card {
+    display: flex;
+    text-align: start;
+}
+
+.custom__card__list {
+    font-size: 0.9rem;
+    color: #555;
+    
+}
+
+.custom__card__list-items {
+    max-width: 100%;
+}
+
+
+/* Items */
+.custom__card-calender {
+}
+
+.custom__card-calender-date-wrap {
+    display: flex;
+    justify-content: space-around;
+}
+
+.custom__card-calender-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom__card-calender-custom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 24%;
+}

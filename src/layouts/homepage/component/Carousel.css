@@ -1,0 +1,87 @@
+/* Carousel Images */
+
+.slide {
+    margin-top: 30px;
+}
+
+.carousel__body {
+    padding: 0 40px;
+}
+
+.carousel-item {
+    padding-top: 20px;
+    background-color: #FFFFFF;
+}
+
+.carousel img {
+    border-radius: 8px;
+}
+
+.carousel__title-wrap {
+    width: 379px;
+    height: 85px;
+    border-radius: 19.46px;
+    background-color: #FFFFFF;
+    box-shadow: 1.5px 2.99px 8.98px 0px #6434F84D;
+}
+
+.carousel__title {
+    line-height: 85px;
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;
+}
+
+.carousel-indicators {
+    display: flex; /* Đảm bảo các nút được hiển thị ngang */
+    justify-content: center; /* Căn giữa */
+    align-items: center; /* Căn giữa dọc */
+    position: absolute;
+    bottom: -20%; /* Khoảng cách so với cạnh dưới carousel */
+}
+
+/* Custom carousel indicators */
+.carousel-indicators [data-bs-target] {
+    width: 8px; /* Chiều rộng nút */
+    height: 8px; /* Chiều cao nút */
+    background-color: #EDEDED; /* Màu nút mặc định */
+    border-radius: 50%; /* Bo tròn toàn bộ để thành hình tròn */
+    margin: 0 4px; /* Khoảng cách giữa các nút */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: #3D5AF1; /* Màu xanh của nút active */
+    width: 24px; /* Chiều rộng lớn hơn khi active */
+    height: 8px; /* Giữ nguyên chiều cao */
+    border-radius: 16px;
+    margin: 0;
+}
+
+/* nut di chuyen qua trai phai */
+.carousel-control-prev {
+    left: -12%;
+}
+
+.carousel-control-prev-icon {
+    background-color: #EFEFEF;
+    height: 48.89px;
+    width: 25.97px;
+    padding: 8px 16px 8px 16px;
+    border-radius: 28px;
+}
+
+.carousel-control-next {
+    right: -12%;
+}
+
+.carousel-control-next-icon {
+    background-color: #EFEFEF;
+    height: 48.89px;
+    width: 25.97px;
+    padding: 8px 16px 8px 16px;
+    border-radius: 28px;
+}

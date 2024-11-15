@@ -108,23 +108,36 @@
 }
 
 
-/* Carousel Images */
-.carousel img {
-    border-radius: 8px;
+/* card chung */
+.card-body {
+    box-shadow: 1.5px 2.99px 8.98px 0px #6434F84D;
+    border-radius: 18.47px;
+    padding-left: 40px;
 }
 
-/* Custom carousel indicators */
-.carousel-indicators [data-bs-target] {
-    width: 16px; /* Độ rộng của nút */
-    height: 8px; /* Chiều cao của nút */
-    background-color: #e0e0e0; /* Màu sắc nút ban đầu */
-    border-radius: 4px; /* Bo tròn để giống như ảnh */
-    margin: 0 5px; /* Khoảng cách giữa các nút */
-    transition: background-color 0.3s ease;
+.card__title {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 38.73px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #4D4D4D;
 }
 
-.carousel-indicators .active {
-    background-color: #1a73e8; /* Màu xanh của nút active */
-    width: 24px; /* Chiều rộng lớn hơn khi active */
-    height: 8px; /* Giữ nguyên chiều cao */
+
+/* custommer nationnal */
+.nationnal__card {
+    text-align: start;
+    font-size: 0.9rem;
+    color: #555;
+    box-shadow: 1.5px 2.99px 8.98px 0px #6434F84D;
+    border-radius: 18.47px;
+    padding-left: 40px;
+}
+
+.nationnal__card-img-details {
+    display: block;
+    width: 100%;
 }
