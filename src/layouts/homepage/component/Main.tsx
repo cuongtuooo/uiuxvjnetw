@@ -4,9 +4,16 @@ import Calender from "./Calender";
 import Carousel from "./Carousel";
 import Category from "./Category";
 function Main() {
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+    // Hàm để cập nhật trạng thái dựa trên mục được nhấn
+    const handleCategoryClick = (category: string) => {
+        setSelectedCategory(category);
+    };
+
     return (
         <div className="main col-9">
-            <Category/>
+            <Category onCategoryClick={handleCategoryClick} />
 
             <div className="row mt-4">
                 <div className="col-md-6">
