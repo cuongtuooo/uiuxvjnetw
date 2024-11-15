@@ -2,7 +2,7 @@ import "./Carousel.css"
 
 function Carousel() {
     return (
-        <div className="card h-100">
+        <div className="card h-100" style={{borderRadius: '19.46px', overflow:'hidden'}}>
             <div className="card-body carousel__body">
                 <div className="carousel__title-wrap">
                    <h5 className="carousel__title">Tin tức khuyến mãi</h5>
@@ -23,16 +23,16 @@ function Carousel() {
 
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src="./image/carousel1.png" className="d-block w-100" alt="Promotion 1" />
+                            <img src="./image/carousel1.png" className="d-block" alt="Promotion 1" />
                         </div>
                         <div className="carousel-item">
-                            <img src="./image/carousel2.png" className="d-block w-100" alt="Promotion 2" />
+                            <img src="./image/carousel2.png" className="d-block" alt="Promotion 2" />
                         </div>
                         <div className="carousel-item">
-                            <img src="./image/carousel3.png" className="d-block w-100" alt="Promotion 3" />
+                            <img src="./image/carousel3.png" className="d-block" alt="Promotion 3" />
                         </div>
                         <div className="carousel-item">
-                            <img src="./image/carousel4.png" className="d-block w-100" alt="Promotion 4" />
+                            <img src="./image/carousel4.png" className="d-block" alt="Promotion 4" />
                         </div>
                     </div>
 

@@ -6,14 +6,14 @@ function Menu() {
             <img src="./image/logohomepage.png" alt="" className="menu__logo" />
             <ul className="menu__list list-style-none list-unstyled">
                 <li className="menu__list-items">
-                    <a href="" className="menu__list-items__links text-decoration-none">
+                    <a href="./" className="menu__list-items__links text-decoration-none">
                         <img src="./icon/tongquanlogo.svg" alt="" className="menu__list-items-logo" />
                         <p className="menu__list-item-text">Tổng quan</p>
                     </a>
                 </li>
 
                 <li className="menu__list-items">
-                    <a href="" className="menu__list-items__links text-decoration-none">
+                    <a href="/sanpham" className="menu__list-items__links text-decoration-none">
                         <img src="./icon/sanphamlogo.svg" alt="" className="menu__list-items-logo" data-animation="bounceIn" />
                         <p className="menu__list-item-text">Sản phẩm</p>
                     </a>

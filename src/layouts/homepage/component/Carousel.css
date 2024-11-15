@@ -6,6 +6,7 @@
 
 .carousel__body {
     padding: 0 40px;
+    border-radius: 0;
 }
 
 .carousel-item {
@@ -23,6 +24,7 @@
     border-radius: 19.46px;
     background-color: #FFFFFF;
     box-shadow: 1.5px 2.99px 8.98px 0px #6434F84D;
+    margin-left: 35px;
 }
 
 .carousel__title {
