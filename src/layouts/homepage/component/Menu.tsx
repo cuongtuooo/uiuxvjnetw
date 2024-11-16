@@ -27,7 +27,7 @@ function Menu() {
                 </li>
 
                 <li className="menu__list-items">
-                    <a href="" className="menu__list-items__links text-decoration-none">
+                    <a href="/taikhoan" className="menu__list-items__links text-decoration-none">
                         <img src="./icon/taikhoanlogo.svg" alt="" className="menu__list-items-logo" />
                         <p className="menu__list-item-text">Tài khoản</p>
                     </a>
@@ -37,14 +37,14 @@ function Menu() {
 
             <ul className="menu__list list-unstyled" style={{ marginTop: '120px' }}>
                 <li className="menu__list-items">
-                    <a href="" className="menu__list-items__links text-decoration-none">
+                    <a href="/trogiup" className="menu__list-items__links text-decoration-none">
                         <img src="./icon/trogiuplogo.svg" alt="" className="menu__list-items-logo" />
                         <p className="menu__list-item-text">Trợ giúp</p>
                     </a>
                 </li>
 
                 <li className="menu__list-items">
-                    <a href="" className="menu__list-items__links text-decoration-none">
+                    <a href="/login" className="menu__list-items__links text-decoration-none">
                         <img src="./icon/dangxuatlogo.svg" alt="" className="menu__list-items-logo" />
                         <p className="menu__list-item-text">Đăng xuất</p>
                     </a>

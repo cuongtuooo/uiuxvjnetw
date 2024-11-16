@@ -1,87 +1,17 @@
-/* Sidebar */
-.sidebar {
-    background-color: #f8f9fa;
-    height: 100vh;
-    padding: 20px;
-}
-
-.sidebar__profile {
-    box-shadow: 1.5px 2.9px 8.98px 0px rgba(100, 52, 248, 0.3);
-    border-radius: 20px;
-    padding: 25px;
-}
-
-.sidebar__profile-image {
-    border: 3px solid #007bff;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-}
-
-.sidebar__username {
-    font-family: Inter;
-    font-size: 18px;
-    font-weight: 600;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    color: #16D0E0;
-    margin-top: 10px;
-}
-
-.sidebar__email {
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 500;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #494949;
-}
-
-/* box */
-.sidebar__info-box {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: #fff;
-    padding-bottom: 121px;
-    padding-left: 20px;
-    padding-right: 40px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-
-}
-
-.sidebar__info-title {
-    margin-top: 116px;
-}
-
-.sidebar__language-select {
-    margin-top: 20px;
-}
-
-.sidebar__language-label {
-    font-weight: bold;
-    margin-right: 12px;
-}
-
-.sidebar__language-dropdown {
-    width: 120px;
-    padding: 5px;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
 /* Main Content */
 .main-content {
+    margin-top: 20px;
     padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 1.5px 2.9px 8.98px 0px #6434F84D;
+    border-radius: 20px;
+    height: 70%;
 }
 
 .main-content__navigation {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .main-content__tab {
@@ -92,7 +22,9 @@
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
+    width: 293px;
     transition: background-color 0.3s ease;
+    height: 47px;
 }
 
 .main-content__tab--active {
@@ -106,9 +38,11 @@
 
 /* Product Grid */
 .main-content__product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Bố trí lưới 4 cột */
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 41px 0;
+    padding: 0 10px;
 }
 
 .main-content__product-card {
@@ -118,6 +52,7 @@
     text-align: center;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 190px;
 }
 
 .main-content__product-body {
@@ -133,15 +68,21 @@
 }
 
 .main-content__product-button {
-    background: #fff;
-    color: #007bff;
-    border: none;
+    background: #FFFFFF;
+    color: #1380A6;
+    border: 1px solid #12477D;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 100px;
+    width: 160px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-content__product-button:hover {
