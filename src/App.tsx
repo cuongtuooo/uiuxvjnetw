@@ -5,6 +5,7 @@ import Login from './layouts/user/Login';
 import SignUp from './layouts/user/SignUp';
 import HomePage from './layouts/homepage/HomePage';
 import Product from './layouts/product/Product';
+import Cart from './layouts/cart/Cart';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/signup' element={<SignUp/>}></Route>
           <Route path='/sanpham' element={<Product/>}></Route>
+          <Route path='/giohang' element={<Cart/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

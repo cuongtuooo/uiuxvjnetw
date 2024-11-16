@@ -2,7 +2,7 @@ import "./Menu.css"
 
 function Menu() {
     return (
-        <div className="menu col-3 p-0 p-l-2">
+        <div className="menu col-3 p-0">
             <img src="./image/logohomepage.png" alt="" className="menu__logo" />
             <ul className="menu__list list-style-none list-unstyled">
                 <li className="menu__list-items">
@@ -20,7 +20,7 @@ function Menu() {
                 </li>
 
                 <li className="menu__list-items">
-                    <a href="" className="menu__list-items__links text-decoration-none">
+                    <a href="/giohang" className="menu__list-items__links text-decoration-none">
                         <img src="./icon/giohanglogo.svg" alt="" className="menu__list-items-logo" />
                         <p className="menu__list-item-text">Giỏ hàng</p>
                     </a>

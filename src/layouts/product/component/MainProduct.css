@@ -247,31 +247,165 @@
     background-color: rgba(0, 0, 0, 0.5); /* Màu nền trong suốt */
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .modal-content {
     background-color: #fff;
-    width: 300px;
-    padding: 20px;
+    width: 397px;
+    height: 227px;
     border-radius: 8px;
     text-align: center;
     position: relative;
     color: #000000;
+    padding-bottom: 6px;
 }
 
 .close {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
+    color:rgba(255, 255, 255, 1);
 }
 
 .pay-now {
-    background-color: #0d6efd;
+    background-color: rgba(18, 73, 132, 1);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0px 20px;
+    border-radius: 100px;
     cursor: pointer;
+    width: 162px;
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 500;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-left: auto;
+    margin-right: auto;
+    height: 44px;
+}
+
+.modal__content-wrap {
+    background: rgba(18, 73, 132, 1);
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+
+.modal__content-wrap h2 {
+    color:rgba(255, 255, 255, 1);
+    margin: 0;
+    
+}
+
+.modal-content-details {
+    font-family: Open Sans;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40.85px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(82, 93, 111, 1);
+    margin-left: 15px;
+}
+
+.modal-content-total  {
+    font-family: Open Sans;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40.85px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(82, 93, 111, 1);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;    
+}
+
+
+/* confirm modal */
+.modal-dialog {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    min-width: 269px;
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 1.5px 2.9px 8.98px 0px rgba(100, 52, 248, 0.3);
+    padding: 12px 0;
+    z-index: 1070; /* Cao hơn modal content */
+}
+
+.confirm-header {
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+    font-family: Open Sans;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 40.85px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(82, 93, 111, 1);
+}
+
+.confirm-title {
+    font-weight: bold;
+}
+
+.confirm-body {
+    font-family: Open Sans;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20.43px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(0, 0, 0, 1);    
+    margin-top: 5px;
+}
+
+.confirm-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin-top: 50px;
+}
+
+.confirm-footer .btn {
+    width: 113px;
+    height: 38px;
+    border-radius: 19.46px;
+    font-size: 16px;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 1);
+    font-family: Open Sans;
+    font-weight: 500;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow: 1.5px 2.99px 8.98px 0px rgba(100, 52, 248, 0.3);
+
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #16D0E0 0%, #112363 100%);
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow: 1.5px 2.99px 8.98px 0px rgba(100, 52, 248, 0.3);
 }

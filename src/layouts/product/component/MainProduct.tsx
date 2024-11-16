@@ -9,7 +9,8 @@ function MainProduct() {
         setSelectedCategory(category);
     };
 
-    function openModal(): void {
+    //modal
+    const openModal = (): void => {
         const modal = document.getElementById("modal");
         if (modal) {
             modal.style.display = "flex";
@@ -18,10 +19,29 @@ function MainProduct() {
         }
     }
 
-    function closeModal(): void {
+    const closeModal = (): void => {
         const modal = document.getElementById("modal");
         if (modal) {
             modal.style.display = "none";
+        } else {
+            console.error("Modal element not found");
+        }
+    }
+
+    //confirm
+    const closeConfirm = (): void => {
+        const cofirm = document.querySelector('.modal-dialog') as HTMLDivElement;
+        if (cofirm) {
+            cofirm.style.display = "none";
+        } else {
+            console.error("Modal element not found");
+        }
+    }
+
+    const openConfirm = (): void => {
+        const cofirm = document.querySelector('.modal-dialog') as HTMLDivElement;
+        if (cofirm) {
+            cofirm.style.display = "block";
         } else {
             console.error("Modal element not found");
         }
@@ -95,14 +115,39 @@ function MainProduct() {
                             {/* Modal */}
                             <div id="modal" className="modal">
                                 <div className="modal-content">
-                                    <span className="close" onClick={closeModal}>&times;</span>
-                                    <h2>VJTEL 1 Tháng</h2>
-                                    <p>Chi tiết</p>
-                                    <p>Tổng: <strong>5 USDT</strong></p>
-                                    <button className="pay-now">Thanh toán</button>
+                                    <div className="modal__content-wrap">
+                                        <span className="close" onClick={closeModal}>&times;</span>
+                                        <h2>VJTEL 1 Tháng</h2>
+                                    </div>
+                                    <p className="modal-content-details">Chi tiết</p>
+                                    <div className="modal-content-total">
+                                        <p>Tổng:</p>
+                                        <p>5 USDT</p>
+                                    </div>
+                                    <button className="pay-now" onClick={openConfirm}>Thanh toán</button>
+
+                                    <div className="modal-dialog">
+                                        <div className="confirm-content">
+                                            <div className="confirm-header">
+                                                <h5 className="confirm-title">VJTEL 1 Tháng</h5>
+                                            </div>
+                                            <div className="confirm-body text-center">
+                                                <p>Bạn có chắc muốn mua gói VJTEL?</p>
+                                            </div>
+                                            <div className="confirm-footer">
+                                                <button type="button" className="btn btn-secondary"  onClick={closeModal}>Hủy</button>
+                                                <button type="button" className="btn btn-primary" onClick={closeConfirm}>Xác nhận</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
+
+
+
                         </div>
+
                         <div className="price-card">
                             <h2>VJTEL 3 Tháng</h2>
                             <img src="./icon/product2.svg" alt="Sản phẩm 2" className="price-image" />
