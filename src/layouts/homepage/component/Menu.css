@@ -1,13 +1,13 @@
 .menu {
-    width: 295px;
-    border-radius: 18.47px;
+    width: 100%; /* Chiếm toàn bộ chiều ngang trên thiết bị nhỏ */
+    max-width: 295px; /* Giới hạn chiều rộng trên desktop */
     background-color: #FFFFFF;
     margin-left: 1.5rem;
 }
 
 .menu__logo {
     display:block;
-    max-width: 100%;
+    max-width: 104%;
 }
 
 .menu__list {

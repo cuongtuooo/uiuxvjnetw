@@ -121,3 +121,17 @@
 .main__list-items.active .main__list-items-button {
     display: none;
 }
+
+@media (max-width: 995px) {
+    .main__list-items {
+        flex: 0 0 calc(100% - 10px); /* Chiếm toàn bộ trên màn hình nhỏ */
+        max-width: calc(100% - 10px);
+    }
+}
+
+@media (min-width: 994px) and ( max-width: 1300px) {
+    .main__list-items {
+        flex: 0 0 calc(50% - 10px); /* Chiếm toàn bộ trên màn hình nhỏ */
+        max-width: calc(50% - 10px);
+    }
+}

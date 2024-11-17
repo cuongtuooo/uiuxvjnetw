@@ -87,3 +87,13 @@
     padding: 8px 16px 8px 16px;
     border-radius: 28px;
 }
+
+@media (min-width: 740px) and ( max-width: 1023px) {
+    .carousel__title-wrap {
+        margin: 0 auto; /* Căn giữa trên tablet */
+    }
+
+    .carousel-indicators {
+        bottom: -15%;
+    }
+}

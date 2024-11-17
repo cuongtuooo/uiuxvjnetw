@@ -12,11 +12,11 @@ function Main() {
     };
 
     return (
-        <div className="main col-9">
+        <div className="main main-container col-xxl-9 col-xl-8 col-lg-7 col-md-4 col-12">
             <Category onCategoryClick={handleCategoryClick} />
 
             <div className="row mt-4">
-                <div className="col-md-6">
+                <div className="col-lg-6 col-md-12 mb-4">
                     <div className="card shadow-sm" style={{ borderRadius: '12px', overflow: 'hidden' }}>
                         <Calender />
 
@@ -34,7 +34,7 @@ function Main() {
                     </div>
                 </div>
 
-                <div className="col-md-6">
+                <div className="col-lg-6 col-md-12">
                     <Carousel />
                 </div>
             </div>

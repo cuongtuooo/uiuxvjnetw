@@ -29,11 +29,11 @@ const Category: React.FC<CategoryProps> = ({ onCategoryClick }) => {
     };
 
     return (
-        <ul className="main__list mt-4">
+        <ul className="main__list mt-4 row">
             {categoryItems.map((category, index) => (
                 <li 
                     key={index} 
-                    className={`main__list-items ${activeIndex === index ? 'active' : ''}`}
+                    className={`main__list-items col-lg-3 col-md-4 col-sm-6 col-12 ${activeIndex === index ? 'active' : ''}`}
                     onClick={() => handleItemClick(index, category.name)}
                 >
                     <a href="#" className="main__list-items-link">

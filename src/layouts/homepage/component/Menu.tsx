@@ -2,7 +2,7 @@ import "./Menu.css"
 
 function Menu() {
     return (
-        <div className="menu col-3 p-0">
+        <div className="menu col-lg-3 col-md-4 col-12">
             <img src="./image/logohomepage.png" alt="" className="menu__logo" />
             <ul className="menu__list list-style-none list-unstyled">
                 <li className="menu__list-items">
