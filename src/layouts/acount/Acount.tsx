@@ -6,7 +6,6 @@ function Acount() {
         <div className="container-fuid background">
             <div className="row">
                 <Menu />
-                <div style={{width: '30px'}}></div>
                 <MainAcount/>
             </div>
         </div>

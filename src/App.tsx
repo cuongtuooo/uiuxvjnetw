@@ -7,6 +7,7 @@ import HomePage from './layouts/homepage/HomePage';
 import Product from './layouts/product/Product';
 import Cart from './layouts/cart/Cart';
 import Acount from './layouts/acount/Acount';
+import Help from './layouts/help/Help';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/sanpham' element={<Product/>}></Route>
           <Route path='/giohang' element={<Cart/>}></Route>
           <Route path='/taikhoan' element={<Acount/>}></Route>
+          <Route path='/trogiup' element={<Help/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
