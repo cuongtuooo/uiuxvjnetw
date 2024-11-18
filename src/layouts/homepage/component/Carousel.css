@@ -88,12 +88,18 @@
     border-radius: 28px;
 }
 
-@media (min-width: 740px) and ( max-width: 1023px) {
+@media (min-width: 740px) and ( max-width: 1300px) {
     .carousel__title-wrap {
         margin: 0 auto; /* Căn giữa trên tablet */
+        width: auto;
+    }
+
+    .carousel__title {
+        font-size: 24px;
     }
 
     .carousel-indicators {
         bottom: -15%;
     }
 }
+

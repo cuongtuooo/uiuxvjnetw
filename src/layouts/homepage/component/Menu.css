@@ -2,13 +2,21 @@
     width: 100%; /* Chiếm toàn bộ chiều ngang trên thiết bị nhỏ */
     max-width: 295px; /* Giới hạn chiều rộng trên desktop */
     background-color: #FFFFFF;
-    margin-left: 1.5rem;
+    padding: 0;
+    position: fixed;
+    z-index: 1;
+    display: none;
+    border-radius: 20px;
 }
 
 .menu__logo {
-    display:block;
-    max-width: 104%;
+    display: block;
+    max-width: 100%; /* Đảm bảo không vượt quá chiều rộng của container */
+    height: auto; /* Để duy trì tỉ lệ ảnh */
+    margin: 0 auto; /* Căn giữa */
+    object-fit: contain; /* Cắt ảnh nếu cần */
 }
+
 
 .menu__list {
     width: 100%;
@@ -61,4 +69,76 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin: 0;
+}
+
+
+/* reponsive */
+.menu-toggle {
+    display: flex;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* Hiển thị menu trên màn hình lớn */
+@media (min-width: 967px) and ( max-width: 1200px) {
+    .menu {
+        display: block;
+        margin-left: 1.5rem;
+        max-width: 250px;
+    }
+    .menu-toggle {
+        display: none; /* Ẩn nút menu trên màn hình lớn */
+    }
+    
+}
+
+@media (min-width: 769px) and ( max-width: 966px) {
+    .menu {
+        display: block;
+        margin-left: 1.5rem;
+        max-width: 200px;
+    }
+    .menu-toggle {
+        display: none; /* Ẩn nút menu trên màn hình lớn */
+    }
+    
+}
+
+@media (min-width: 768px) {
+    .menu {
+        display: block;
+        margin-left: 1.5rem;
+    }
+    .menu-toggle {
+        display: none; /* Ẩn nút menu trên màn hình lớn */
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .menu {
+        max-width: 200px;
+    }
+}
+
+/* Khi nhấn vào nút menu trên màn hình nhỏ */
+.menu.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 295px;
+    height: 100%;
+    background-color: #FFFFFF;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

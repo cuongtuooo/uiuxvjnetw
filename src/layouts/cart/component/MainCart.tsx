@@ -18,7 +18,7 @@ function MainCart() {
         });
     };
     return (
-        <div className="col-9 main-container">
+        <div className="col-xxl-9 col-xl-8 col-lg-8 col-md-8 col-12 main-container">
             <div className="row">
                 {/* Sidebar */}
                 <Profile/>
@@ -28,7 +28,7 @@ function MainCart() {
                 </div>
 
                 {/* Main Content */}
-                <div className="main-content col-md-8">
+                <div className="main-content col-xl-8 col-md-12">
                     {/* Navigation */}
                     <div className="main-content__navigation d-flex justify-content-around">
                         <button

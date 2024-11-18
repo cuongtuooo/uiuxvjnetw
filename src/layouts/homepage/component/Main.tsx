@@ -12,7 +12,7 @@ function Main() {
     };
 
     return (
-        <div className="main main-container col-xxl-9 col-xl-8 col-lg-7 col-md-4 col-12">
+        <div className="main main-container col-xxl-9 col-xl-8 col-lg-8 col-md-8 col-12">
             <Category onCategoryClick={handleCategoryClick} />
 
             <div className="row mt-4">

@@ -5,6 +5,7 @@ function Product(){
     return(
         <div className="container-fuid background">
             <div className="row">
+                <div className="reponsive"></div>
                 <Menu/>
                 <MainProduct/>
             </div>

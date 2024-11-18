@@ -1,7 +1,7 @@
 import "./Profile.css"
 function Profile() {
     return (
-        <div className="sidebar col-md-3">
+        <div className="sidebar col-xl-3  col-md-12">
             <div className="sidebar__profile text-center mb-4">
                 <img
                     src="./image/profileimg.png"

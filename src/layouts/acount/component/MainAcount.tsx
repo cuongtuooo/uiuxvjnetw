@@ -3,11 +3,11 @@ import "./MainAcount.css"
 
 function MainAcount() {
     return (
-        <div className="col-md-9 row main-container">
+        <div className="col-xxl-9 col-xl-8 col-lg-8 col-md-8 col-12 row main-container">
             <Profile/>
 
             <div style={{width:'40px'}} className=""></div>
-            <div className="col-8">
+            <div className="col-xl-8 col-md-12">
                 <div className="user__wraper">
                     <div className="user-settings container mt-5">
                         <h2 className="user-settings__title mb-4">Cài đặt người dùng</h2>

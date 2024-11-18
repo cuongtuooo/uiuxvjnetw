@@ -6,6 +6,7 @@ function Cart(){
     return(
         <div className="container-fuid background">
             <div className="row">
+                <div className="reponsive"></div>   
                 <Menu/>
                 <MainCart/>
             </div>

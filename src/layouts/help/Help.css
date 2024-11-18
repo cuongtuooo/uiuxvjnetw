@@ -1,129 +1,131 @@
 /* Block: help-form */
+.help-form-wrap {}
+
 .help-form {
-    width: 95%;
-    margin: auto;
-    background: linear-gradient(90deg, #16D0E0 0%, #112363 100%);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-    color: #fff;
-  }
-  
-  /* Element: header */
-  .help-form__header {
-    text-align: center;
-    width: 306px;
-    height: 68px;
-    border-radius: 20px;
-    background: #FFFFFF;
-    box-shadow: 1.5px 2.99px 8.98px 0px #6434F84D;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 25px;
-  }
-  
-  .help-form__title {
-    font-family: Inter;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 68px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-   
+  width: 95%;
+  margin: auto;
+  background: linear-gradient(90deg, #16D0E0 0%, #112363 100%);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
 
-  }
-  
-  /* Element: body */
-  .help-form__body {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .help-form__textarea {
-    width: 100%;
-    height: 292px;
-    border-radius: 8px;
-    padding: 10px 47px;
-    border: none;
-    resize: none;
-    background: rgba(255, 255, 255, 0.8);
-    font-family: Inter;
-    font-size: 22px;
-    font-weight: 300;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    color: #FFFFFFCC;
-    background: #FFFFFFCC;
+/* Element: header */
+.help-form__header {
+  text-align: center;
+  width: 306px;
+  height: 68px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 1.5px 2.99px 8.98px 0px #6434F84D;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
 
-  }
-  
-  .help-form__textarea:focus {
-    outline: none;
-    box-shadow: 0px 0px 5px #16a085;
-  }
-  
-  /* Element: button */
-  .help-form__button {
-    margin-left: auto; /* Đẩy nút sang bên phải */
-    width: 100px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    border-radius: 61px;
-    color: #000000;
-  }
-  
-  .help-form__button--send {
-    background-color: #2980b9;
-  
-  }
-  
-  .help-form__button--send:hover {
-    background-color: #3498db;
-    transform: scale(1.05);
-  }
-  
-  .help-form__button-icon {
-    margin-left: 10px;
-  }
-  
-  /* Element: footer */
-  .help-form__footer {
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
-    height: 105px;
-    margin-top: 72px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-    padding: 10px 0;
-    background: #FFFFFF;
-    border-radius: 8px;
-    color: #000000;
-    box-shadow: 1.5px 2.99px 8.98px 0px #6434F84D;
+.help-form__title {
+  font-family: Inter;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 68px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 
-  }
-  
-  .help-form__contact {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 17px;
-  }
-  
-  .help-form__icon {
-    font-size: 18px;
-  }
-  
+
+}
+
+/* Element: body */
+.help-form__body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.help-form__textarea {
+  width: 100%;
+  height: 292px;
+  border-radius: 8px;
+  padding: 10px 47px;
+  border: none;
+  resize: none;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 300;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #FFFFFFCC;
+  background: #FFFFFFCC;
+
+}
+
+.help-form__textarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px #16a085;
+}
+
+/* Element: button */
+.help-form__button {
+  margin-left: auto;
+  /* Đẩy nút sang bên phải */
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border-radius: 61px;
+  color: #000000;
+}
+
+.help-form__button--send {
+  background-color: #2980b9;
+
+}
+
+.help-form__button--send:hover {
+  background-color: #3498db;
+  transform: scale(1.05);
+}
+
+.help-form__button-icon {
+  margin-left: 10px;
+}
+
+/* Element: footer */
+.help-form__footer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  height: 105px;
+  margin-top: 72px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  padding: 10px 0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  color: #000000;
+  box-shadow: 1.5px 2.99px 8.98px 0px #6434F84D;
+  margin-bottom: 40px;
+}
+
+.help-form__contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+}
+
+.help-form__icon {
+  font-size: 18px;
+}

@@ -48,7 +48,7 @@ function MainProduct() {
     }
 
     return (
-        <div className="col-9 main-container">
+        <div className="col-xxl-9 col-xl-8 col-lg-8 col-md-8 col-12 main-container">
             <div className="product">
                 <div className="product_heading">
                     <h5 className="product_heading-text">Danh mục sản phẩm</h5>
