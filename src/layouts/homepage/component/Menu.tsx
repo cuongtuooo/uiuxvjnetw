@@ -10,7 +10,7 @@ function Menu() {
 
     return (
         <>
-            <button className="menu-toggle" onClick={toggleMenu}></button>
+            <button style={{background:'url("./icon/bars-solid.svg") '}} className="menu-toggle" onClick={toggleMenu}></button>
             <div className={`menu col-lg-3 col-md-4 col-12 ${isMenuOpen ? 'active' : ''}`}>
                 <img src="./image/logohomepage.png" alt="" className="menu__logo" />
                 <ul className="menu__list list-style-none list-unstyled">

@@ -79,11 +79,10 @@
     top: 10px;
     left: 10px;
     z-index: 1000;
-    width: 50px;
+    width: 42px;
     height: 50px;
     background-size: contain;
     border: none;
-    cursor: pointer;
 }
 
 

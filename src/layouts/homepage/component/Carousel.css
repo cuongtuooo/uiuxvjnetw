@@ -37,6 +37,8 @@
     color: #000000;
 }
 
+
+
 .carousel-indicators {
     display: flex; /* Đảm bảo các nút được hiển thị ngang */
     justify-content: center; /* Căn giữa */
@@ -103,3 +105,19 @@
     }
 }
 
+@media ( max-width: 1200px) {
+    .carousel-inner {
+        margin-bottom: 40px;
+    }
+    .carousel__title-wrap {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 343px;
+        width: auto;
+    }
+
+}
+
+@media ( max-width: 768px) {
+    
+}

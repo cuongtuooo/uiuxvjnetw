@@ -37,6 +37,7 @@ function Profile() {
                         >
                             <option value="vi">Tiếng Việt</option>
                             <option value="en">English</option>
+                            <option value="jp">Tiếng Nhật</option>
                         </select>
                     </div>
                 </div>

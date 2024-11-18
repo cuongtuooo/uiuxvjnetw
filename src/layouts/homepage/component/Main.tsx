@@ -16,7 +16,7 @@ function Main() {
             <Category onCategoryClick={handleCategoryClick} />
 
             <div className="row mt-4">
-                <div className="col-lg-6 col-md-12 mb-4">
+                <div className="col-xl-6 col-lg-12 col-md-12 mb-4">
                     <div className="card shadow-sm" style={{ borderRadius: '12px', overflow: 'hidden' }}>
                         <Calender />
 
@@ -34,7 +34,7 @@ function Main() {
                     </div>
                 </div>
 
-                <div className="col-lg-6 col-md-12">
+                <div className="col-xl-6 col-lg-12 col-md-12">
                     <Carousel />
                 </div>
             </div>
