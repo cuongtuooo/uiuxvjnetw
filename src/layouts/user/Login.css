@@ -7,26 +7,23 @@
 }
 
 .login_image-png {
-    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
 .login_form-logo {
     display: block;
-    padding-left: 67px;
     margin-bottom: 41px;
+    max-width: 100%;
+    padding-left: 50px;
 }
 
 
 .login_form-details {
-    width: 427px;
-    height: 557px;
-    top: 312px;
-    left: 946px;
-    gap: 0px;
-    opacity: 0px;
+    width: 90%; 
     padding: 4px;
-    padding-left: 56px;
 }
 
 .login_form-header {
@@ -110,7 +107,7 @@
 .login__input-post {
     display: block;
     margin-top: 12px;
-    width: 426px;
+    width: 100%;
     height: 64px;
     top: 487px;
     left: 947px;
@@ -155,11 +152,10 @@
 
 .btn_sublit {
     margin-top: 29px;
-    width: 426px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     height: 64px;
-    top: 743px;
-    left: 947px;
-    gap: 0px;
     border-radius: 6px;
     opacity: 0px;
     background: linear-gradient(90deg, #16D0E0 0%, #112363 100%);
@@ -204,4 +200,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .login_form-logo {
+        margin-bottom: 10px;
+    }
+
+    .login_form-details {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .login_form-logo {
+        padding: 0;
+    }
 }

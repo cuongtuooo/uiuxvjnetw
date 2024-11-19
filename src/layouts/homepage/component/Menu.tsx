@@ -44,7 +44,7 @@ function Menu() {
 
                 </ul>
 
-                <ul className="menu__list list-unstyled" style={{ marginTop: '120px' }}>
+                <ul className="menu__list list-unstyled" style={{ marginTop: '50px' }}>
                     <li className="menu__list-items">
                         <a href="/trogiup" className="menu__list-items__links text-decoration-none">
                             <img src="./icon/trogiuplogo.svg" alt="" className="menu__list-items-logo" />
