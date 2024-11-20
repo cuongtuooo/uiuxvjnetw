@@ -94,3 +94,15 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.form__product {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 12px;
+}
+
+.button-form {
+    width: 300px;
+}

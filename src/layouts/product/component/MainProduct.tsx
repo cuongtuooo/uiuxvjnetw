@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Category from "../../homepage/component/Category";
 import "./MainProduct.css";
+import { usePackage } from "../../../Api/PackageContext";
 
 function MainProduct() {
+    const { packages } = usePackage();
+
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const handleCategoryClick = (category: string) => {
@@ -64,7 +67,7 @@ function MainProduct() {
             <Category onCategoryClick={handleCategoryClick} />
 
             {/* Hiển thị nội dung dựa trên selectedCategory */}
-            <div className=" product__content">
+            <div className="product__content">
                 {selectedCategory === null ? (
                     // Mặc định hiển thị "Sản phẩm chính"
                     <div className="product-card p-4 text-white text-center">
@@ -94,116 +97,116 @@ function MainProduct() {
                 ) : selectedCategory === "VJTEL" ? (
                     // Hiển thị các gói giá của VJTEL khi chọn "VJTEL"
                     <div className="vj-tel-content">
-                        <div className="price-card">
-                            <h2>VJTEL 1 Tháng</h2>
-                            <img src="./icon/product1.png" alt="Sản phẩm 1" className="price-image" />
+                        {packages.map((pkg)=>(
+                            <div className="price-card" key={pkg.name}>
+                                <h2>{pkg.name}</h2>
+                                <img src={pkg.image} alt="Sản phẩm 1" className="price-image" />
 
-                            <div className="price-info">
-                                <ul>
-                                    <li>Phù hợp với cá nhân, hộ gia đình</li>
-                                    <li>Phí hòa mạng</li>
-                                    <li>Trang bị Modem 2 băng tần 2.4Ghz & 5.0Ghz</li>
-                                    <li>Tặng: Lắp đặt nhanh trong ngày</li>
-                                </ul>
-                            </div>
+                                <div className="price-info">
+                                    <ul>
+                                        {pkg.details.map((detail, index)=>(
+                                            <li key={index}>{detail}</li>
+                                        ))}
+                                    </ul>
+                                </div>
 
-                            <div className="price-buttons">
-                                <button className="buy-now" onClick={openModal}>Mua ngay</button>
-                                <button className="add-to-cart">+ Giỏ hàng</button>
-                            </div>
+                                <div className="price-buttons">
+                                    <button className="buy-now" onClick={openModal}>Mua ngay</button>
+                                    <button className="add-to-cart">+ Giỏ hàng</button>
+                                </div>
 
-                            {/* Modal */}
-                            <div id="modal" className="modal">
-                                <div className="modal-content">
-                                    <div className="modal__content-wrap">
-                                        <span className="close" onClick={closeModal}>&times;</span>
-                                        <h2>VJTEL 1 Tháng</h2>
-                                    </div>
-                                    <p className="modal-content-details">Chi tiết</p>
-                                    <div className="modal-content-total">
-                                        <p>Tổng:</p>
-                                        <p>5 USDT</p>
-                                    </div>
-                                    <button className="pay-now" onClick={openConfirm}>Thanh toán</button>
+                                {/* Modal */}
+                                <div id="modal" className="modal">
+                                    <div className="modal-content">
+                                        <div className="modal__content-wrap">
+                                            <span className="close" onClick={closeModal}>&times;</span>
+                                            <h2>{pkg.name}</h2>
+                                        </div>
+                                        <p className="modal-content-details">Chi tiết</p>
+                                        <div className="modal-content-total">
+                                            <p>Tổng:</p>
+                                            <p>5 USDT</p>
+                                        </div>
+                                        <button className="pay-now" onClick={openConfirm}>Thanh toán</button>
 
-                                    <div className="modal-dialog">
-                                        <div className="confirm-content">
-                                            <div className="confirm-header">
-                                                <h5 className="confirm-title">VJTEL 1 Tháng</h5>
-                                            </div>
-                                            <div className="confirm-body text-center">
-                                                <p>Bạn có chắc muốn mua gói VJTEL?</p>
-                                            </div>
-                                            <div className="confirm-footer">
-                                                <button type="button" className="btn btn-secondary"  onClick={closeModal}>Hủy</button>
-                                                <button type="button" className="btn btn-primary" onClick={closeConfirm}>Xác nhận</button>
+                                        <div className="modal-dialog">
+                                            <div className="confirm-content">
+                                                <div className="confirm-header">
+                                                    <h5 className="confirm-title">{pkg.name}</h5>
+                                                </div>
+                                                <div className="confirm-body text-center">
+                                                    <p>Bạn có chắc muốn mua gói {pkg.name}?</p>
+                                                </div>
+                                                <div className="confirm-footer">
+                                                    <button type="button" className="btn btn-secondary"  onClick={closeModal}>Hủy</button>
+                                                    <button type="button" className="btn btn-primary" onClick={closeConfirm}>Xác nhận</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
 
+
+
                             </div>
+                            // <div className="price-card">
+                            //     <h2>VJTEL 3 Tháng</h2>
+                            //     <img src="./icon/product2.svg" alt="Sản phẩm 2" className="price-image" />
+
+                            //     <div className="price-info">
+                            //         <ul>
+                            //             <li>Phù hợp với cá nhân, hộ gia đình</li>
+                            //             <li>Phí hòa mạng</li>
+                            //             <li>Trang bị Modem 2 băng tần 2.4Ghz & 5.0Ghz</li>
+                            //             <li>Tặng: Lắp đặt nhanh trong ngày</li>
+                            //         </ul>
+                            //     </div>
+
+                            //     <div className="price-buttons">
+                            //         <button className="buy-now">Mua ngay</button>
+                            //         <button className="add-to-cart">+ Giỏ hàng</button>
+                            //     </div>
+                            // </div>
+                            // <div className="price-card">
+                            //     <h2>VJTEL 6 Tháng</h2>
+                            //     <img src="./icon/product3.png" alt="Sản phẩm 3" className="price-image" />
+
+                            //     <div className="price-info">
+                            //         <ul>
+                            //             <li>Phù hợp với cá nhân, hộ gia đình</li>
+                            //             <li>Phí hòa mạng</li>
+                            //             <li>Trang bị Modem 2 băng tần 2.4Ghz & 5.0Ghz</li>
+                            //             <li>Tặng: Lắp đặt nhanh trong ngày</li>
+                            //         </ul>
+                            //     </div>
 
 
+                            //     <div className="price-buttons">
+                            //         <button className="buy-now">Mua ngay</button>
+                            //         <button className="add-to-cart">+ Giỏ hàng</button>
+                            //     </div>
+                            // </div>
+                            // <div className="price-card">
+                            //     <h2>VJTEL 12 Tháng</h2>
+                            //     <img src="./icon/product4.svg" alt="Sản phẩm 4" className="price-image" />
 
-                        </div>
-
-                        <div className="price-card">
-                            <h2>VJTEL 3 Tháng</h2>
-                            <img src="./icon/product2.svg" alt="Sản phẩm 2" className="price-image" />
-
-                            <div className="price-info">
-                                <ul>
-                                    <li>Phù hợp với cá nhân, hộ gia đình</li>
-                                    <li>Phí hòa mạng</li>
-                                    <li>Trang bị Modem 2 băng tần 2.4Ghz & 5.0Ghz</li>
-                                    <li>Tặng: Lắp đặt nhanh trong ngày</li>
-                                </ul>
-                            </div>
-
-                            <div className="price-buttons">
-                                <button className="buy-now">Mua ngay</button>
-                                <button className="add-to-cart">+ Giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div className="price-card">
-                            <h2>VJTEL 6 Tháng</h2>
-                            <img src="./icon/product3.png" alt="Sản phẩm 3" className="price-image" />
-
-                            <div className="price-info">
-                                <ul>
-                                    <li>Phù hợp với cá nhân, hộ gia đình</li>
-                                    <li>Phí hòa mạng</li>
-                                    <li>Trang bị Modem 2 băng tần 2.4Ghz & 5.0Ghz</li>
-                                    <li>Tặng: Lắp đặt nhanh trong ngày</li>
-                                </ul>
-                            </div>
+                            //     <div className="price-info">
+                            //         <ul>
+                            //             <li>Phù hợp với cá nhân, hộ gia đình</li>
+                            //             <li>Phí hòa mạng</li>
+                            //             <li>Trang bị Modem 2 băng tần 2.4Ghz & 5.0Ghz</li>
+                            //             <li>Tặng: Lắp đặt nhanh trong ngày</li>
+                            //         </ul>
+                            //     </div>
 
 
-                            <div className="price-buttons">
-                                <button className="buy-now">Mua ngay</button>
-                                <button className="add-to-cart">+ Giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div className="price-card">
-                            <h2>VJTEL 12 Tháng</h2>
-                            <img src="./icon/product4.svg" alt="Sản phẩm 4" className="price-image" />
-
-                            <div className="price-info">
-                                <ul>
-                                    <li>Phù hợp với cá nhân, hộ gia đình</li>
-                                    <li>Phí hòa mạng</li>
-                                    <li>Trang bị Modem 2 băng tần 2.4Ghz & 5.0Ghz</li>
-                                    <li>Tặng: Lắp đặt nhanh trong ngày</li>
-                                </ul>
-                            </div>
-
-
-                            <div className="price-buttons">
-                                <button className="buy-now">Mua ngay</button>
-                                <button className="add-to-cart">+ Giỏ hàng</button>
-                            </div>
-                        </div>
+                            //     <div className="price-buttons">
+                            //         <button className="buy-now">Mua ngay</button>
+                            //         <button className="add-to-cart">+ Giỏ hàng</button>
+                            //     </div>
+                            // </div>
+                        ))}
                     </div>
                 ) : (
                     // Hiển thị "Coming Soon" cho các category khác

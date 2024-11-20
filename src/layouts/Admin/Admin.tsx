@@ -21,17 +21,28 @@ const Admin: React.FC = () => {
                     <ul className="nav flex-column">
                         <li className="nav-item mb-2">
                             <Link className="nav-link text-white" to="/admin/account-management">
-                                Account Management
+                                Quản lý tài khoản
                             </Link>
                         </li>
                         <li className="nav-item mb-2">
                             <Link className="nav-link text-white" to="/admin/news-management">
-                                News Management
+                                Quản lý tin tức
                             </Link>
                         </li>
                         <li className="nav-item mb-2">
                             <Link className="nav-link text-white" to="/admin/product-package-management">
-                                Product Package Management
+                                Quản lý gói sản phẩm
+                            </Link>
+                        </li>
+
+                        <li className="nav-item mb-2">
+                            {/* Truyền state qua Link */}
+                            <Link
+                                className="nav-link text-white"
+                                to="/sanpham"
+                                state={{ packages }}
+                            >
+                                Trang sản phẩm
                             </Link>
                         </li>
                     </ul>

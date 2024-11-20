@@ -11,28 +11,31 @@ import Help from './layouts/help/Help';
 import Admin from './layouts/Admin/Admin';
 import { AuthProvider } from './Api/authContext';
 import PrivateRoute from './Api/PrivateRoute';
+import { PackageProvider } from './Api/PackageContext';
 
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/login' element={<Login />}></Route>
-            <Route path='/signup' element={<SignUp />}></Route>
-            <Route path="*" element={<Login />} />
+        <PackageProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/login' element={<Login />}></Route>
+              <Route path='/signup' element={<SignUp />}></Route>
+              <Route path="*" element={<Login />} />
 
-             {/* Sử dụng PrivateRoute để bảo vệ Admin */}
-            <Route path="/admin/*" element={<PrivateRoute element={<Admin />} />} />
-            <Route path='/homepage' element={<HomePage />}></Route>
-            <Route path='/sanpham' element={<Product />}></Route>
-            <Route path='/giohang' element={<Cart />}></Route>
-            <Route path='/taikhoan' element={<Acount />}></Route>
-            <Route path='/trogiup' element={<Help />}></Route>
-            <Route path="/" element={<HomePage />} />
-          </Routes>
-        </BrowserRouter>
+              {/* Sử dụng PrivateRoute để bảo vệ Admin */}
+              <Route path="/admin/*" element={<PrivateRoute element={<Admin />} />} />
+              <Route path='/homepage' element={<HomePage />}></Route>
+              <Route path='/sanpham' element={<Product />}></Route>
+              <Route path='/giohang' element={<Cart />}></Route>
+              <Route path='/taikhoan' element={<Acount />}></Route>
+              <Route path='/trogiup' element={<Help />}></Route>
+              <Route path="/" element={<HomePage />} />
+            </Routes>
+          </BrowserRouter>
+        </PackageProvider>
       </AuthProvider>
     </div>
   );
