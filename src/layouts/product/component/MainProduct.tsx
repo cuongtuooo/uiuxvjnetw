@@ -64,7 +64,7 @@ function MainProduct() {
             <Category onCategoryClick={handleCategoryClick} />
 
             {/* Hiển thị nội dung dựa trên selectedCategory */}
-            <div className="container product__content">
+            <div className=" product__content">
                 {selectedCategory === null ? (
                     // Mặc định hiển thị "Sản phẩm chính"
                     <div className="product-card p-4 text-white text-center">

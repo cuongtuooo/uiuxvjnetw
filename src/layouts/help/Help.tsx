@@ -13,7 +13,7 @@ function Help() {
                             <div className="help-form__header text-center">
                                 <h3 className="help-form__title">Trợ giúp</h3>
                             </div>
-                            <div className="help-form container">
+                            <div className="help-form ">
                                 <div className="help-form__body d-flex flex-column gap-2">
                                     <textarea
                                         className="help-form__textarea form-control"

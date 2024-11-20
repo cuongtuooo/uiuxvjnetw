@@ -2,11 +2,13 @@ import { useState } from "react";
 import "./Login.css"
 import { useNavigate } from "react-router";
 import { loginUser } from "../../Api/fakeApi";
+import { useAuth } from "../../Api/authContext";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const { login } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -14,8 +16,8 @@ function Login() {
         
         try {
           const user = loginUser(email, password);
-          console.log("Logged in:", user);
-          navigate("/homepage"); // Redirect to dashboard page
+          login();
+          navigate("/admin/*"); // Redirect to dashboard page
         } catch (err: any) {
           setError(err.message);
         }

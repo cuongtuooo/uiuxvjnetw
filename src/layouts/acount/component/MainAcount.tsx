@@ -9,7 +9,7 @@ function MainAcount() {
             <div style={{width:'40px'}} className=""></div>
             <div className="col-xl-8 col-md-12">
                 <div className="user__wraper">
-                    <div className="user-settings container mt-5">
+                    <div className="user-settings mt-5">
                         <h2 className="user-settings__title mb-4">Cài đặt người dùng</h2>
 
                         {/* Chi tiết */}
