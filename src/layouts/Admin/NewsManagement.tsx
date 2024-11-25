@@ -1,57 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getNewss, createNews, updateNews, deleteNews } from "../../Api/NewsApi";
 
 const NewsManagement: React.FC = () => {
-    // State quản lý danh sách tin tức
-    const [news, setNews] = useState<{ title: string; content: string }[]>([
-        { title: "News 1", content: "Content for news 1" },
-        { title: "News 2", content: "Content for news 2" },
-    ]);
-
-    // State quản lý form
-    const [formState, setFormState] = useState<{ title: string; content: string }>({
+    const [news, setNews] = useState<{ id: number; title: string; content: string }[]>([]);
+    const [formState, setFormState] = useState<{ id?: number; title: string; content: string }>({
         title: "",
         content: "",
     });
-
-    // State xác định chế độ chỉnh sửa
     const [isEditing, setIsEditing] = useState(false);
 
-    // Xử lý thay đổi trong form
+    // Fetch news when the component mounts
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                const data = await getNewss();
+                setNews(data);
+            } catch (error) {
+                console.error("Error fetching news:", error);
+            }
+        };
+        fetchNews();
+    }, []);
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormState({ ...formState, [name]: value });
     };
 
-    // Xử lý thêm hoặc chỉnh sửa tin tức
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (isEditing) {
-            setNews((prev) =>
-                prev.map((item) =>
-                    item.title === formState.title ? { ...formState } : item
-                )
-            );
-        } else {
-            setNews((prev) => [...prev, { ...formState }]);
+        try {
+            if (isEditing) {
+                if (formState.id) {
+                    const updatedNews = await updateNews(formState.id, formState.title, formState.content);
+                    setNews((prev) =>
+                        prev.map((item) => (item.id === formState.id ? updatedNews : item))
+                    );
+                }
+            } else {
+                const newNews = await createNews(formState.title, formState.content);
+                setNews((prev) => [...prev, newNews]); // Thêm tin tức mới vào state mà không cần tải lại trang
+            }
+            resetForm();
+        } catch (error) {
+            console.error("Error adding/updating news:", error);
         }
-        resetForm();
     };
 
-    // Xử lý chỉnh sửa tin tức
-    const handleEdit = (title: string) => {
-        const newsToEdit = news.find((item) => item.title === title);
+    const handleEdit = (id: number) => {
+        const newsToEdit = news.find((item) => item.id === id);
         if (newsToEdit) {
             setFormState(newsToEdit);
             setIsEditing(true);
         }
     };
 
-    // Xử lý xóa tin tức
-    const handleDelete = (title: string) => {
-        setNews(news.filter((item) => item.title !== title));
+    const handleDelete = async (id: number) => {
+        try {
+            await deleteNews(id);
+            setNews((prev) => prev.filter((item) => item.id !== id));
+        } catch (error) {
+            console.error("Error deleting news:", error);
+        }
     };
 
-    // Reset form về trạng thái mặc định
     const resetForm = () => {
         setFormState({ title: "", content: "" });
         setIsEditing(false);
@@ -61,7 +73,6 @@ const NewsManagement: React.FC = () => {
         <div>
             <h2>News Management</h2>
 
-            {/* Form thêm hoặc chỉnh sửa tin tức */}
             <form className="form__product" onSubmit={handleSubmit}>
                 <div>
                     <label>Title:</label>
@@ -71,7 +82,6 @@ const NewsManagement: React.FC = () => {
                         value={formState.title}
                         onChange={handleInputChange}
                         required
-                        // disabled={isEditing} // Không cho phép sửa title khi chỉnh sửa
                     />
                 </div>
                 <div>
@@ -87,7 +97,6 @@ const NewsManagement: React.FC = () => {
                 {isEditing && <button type="button" onClick={resetForm}>Cancel</button>}
             </form>
 
-            {/* Danh sách tin tức */}
             <table>
                 <thead>
                     <tr>
@@ -98,12 +107,12 @@ const NewsManagement: React.FC = () => {
                 </thead>
                 <tbody>
                     {news.map((newsItem) => (
-                        <tr key={newsItem.title}>
+                        <tr key={newsItem.id}>
                             <td>{newsItem.title}</td>
                             <td>{newsItem.content}</td>
                             <td>
-                                <button onClick={() => handleEdit(newsItem.title)}>Edit</button>
-                                <button onClick={() => handleDelete(newsItem.title)}>Delete</button>
+                                <button onClick={() => handleEdit(newsItem.id)}>Edit</button>
+                                <button onClick={() => handleDelete(newsItem.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}

@@ -12,6 +12,8 @@ import Admin from './layouts/Admin/Admin';
 import { AuthProvider } from './Api/authContext';
 import PrivateRoute from './Api/PrivateRoute';
 import { PackageProvider } from './Api/PackageContext';
+import TaskList from './testcomponent/TaskList';
+import TaskForm from './testcomponent/TaskForm';
 
 
 function App() {
@@ -33,6 +35,11 @@ function App() {
               <Route path='/taikhoan' element={<Acount />}></Route>
               <Route path='/trogiup' element={<Help />}></Route>
               <Route path="/" element={<HomePage />} />
+
+              {/* test api laraverl */}
+              <Route path="/tasks" element={<TaskList />} />
+              <Route path="/tasksfrom" element={<TaskForm />} />
+
             </Routes>
           </BrowserRouter>
         </PackageProvider>

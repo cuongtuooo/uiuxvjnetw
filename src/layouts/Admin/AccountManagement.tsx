@@ -1,57 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getTaiKhoans, createTaiKhoan, updateTaiKhoan, deleteTaiKhoan } from "../../Api/TaiKhoanApi";
+
+type TaiKhoan = {
+    id: number;
+    email: string;
+    role: string;
+};
 
 const AccountManagement: React.FC = () => {
-    // State lưu danh sách tài khoản
-    const [accounts, setAccounts] = useState<{ email: string; role: string }[]>([
-        { email: "user1@example.com", role: "Admin" },
-        { email: "user2@example.com", role: "User" },
-    ]);
-
-    // State quản lý form
-    const [formState, setFormState] = useState<{ email: string; role: string }>({
+    const [accounts, setAccounts] = useState<TaiKhoan[]>([]);
+    const [formState, setFormState] = useState<{ id?: number; email: string; role: string }>({
         email: "",
         role: "User",
     });
-
-    // State xác định xem có đang chỉnh sửa hay không
     const [isEditing, setIsEditing] = useState(false);
 
-    // Xử lý thay đổi trong form
+    // Fetch danh sách tài khoản từ API khi component được render
+    useEffect(() => {
+        fetchAccounts();
+    }, []);
+
+    const fetchAccounts = async () => {
+        try {
+            const data = await getTaiKhoans();
+            setAccounts(data);
+        } catch (error) {
+            console.error("Error fetching accounts:", error);
+        }
+    };
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormState({ ...formState, [name]: value });
     };
 
-    // Xử lý thêm hoặc chỉnh sửa tài khoản
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (isEditing) {
-            setAccounts((prev) =>
-                prev.map((account) =>
-                    account.email === formState.email ? { ...formState } : account
-                )
-            );
-        } else {
-            setAccounts((prev) => [...prev, { ...formState }]);
+        try {
+            if (isEditing && formState.id) {
+                // Gọi API cập nhật tài khoản
+                await updateTaiKhoan(formState.id, formState.email, formState.role);
+            } else {
+                // Gọi API thêm tài khoản mới
+                await createTaiKhoan(formState.email, formState.role);
+            }
+            // Refresh danh sách tài khoản
+            fetchAccounts();
+            resetForm();
+        } catch (error) {
+            console.error("Error saving account:", error);
         }
-        resetForm();
     };
 
-    // Xử lý khi click nút chỉnh sửa
-    const handleEdit = (email: string) => {
-        const accountToEdit = accounts.find((account) => account.email === email);
+    const handleEdit = (id: number) => {
+        const accountToEdit = accounts.find((account) => account.id === id);
         if (accountToEdit) {
             setFormState(accountToEdit);
             setIsEditing(true);
         }
     };
 
-    // Xử lý khi click nút xóa
-    const handleDelete = (email: string) => {
-        setAccounts(accounts.filter((account) => account.email !== email));
+    const handleDelete = async (id: number) => {
+        try {
+            // Gọi API xóa tài khoản
+            await deleteTaiKhoan(id);
+            // Refresh danh sách tài khoản
+            fetchAccounts();
+        } catch (error) {
+            console.error("Error deleting account:", error);
+        }
     };
 
-    // Reset form về trạng thái mặc định
     const resetForm = () => {
         setFormState({ email: "", role: "User" });
         setIsEditing(false);
@@ -71,7 +90,6 @@ const AccountManagement: React.FC = () => {
                         value={formState.email}
                         onChange={handleInputChange}
                         required
-                        // disabled={isEditing} // Không cho phép sửa email khi chỉnh sửa
                     />
                 </div>
                 <div>
@@ -101,12 +119,12 @@ const AccountManagement: React.FC = () => {
                 </thead>
                 <tbody>
                     {accounts.map((account) => (
-                        <tr key={account.email}>
+                        <tr key={account.id}>
                             <td>{account.email}</td>
                             <td>{account.role}</td>
                             <td>
-                                <button onClick={() => handleEdit(account.email)}>Edit</button>
-                                <button onClick={() => handleDelete(account.email)}>Delete</button>
+                                <button onClick={() => handleEdit(account.id)}>Edit</button>
+                                <button onClick={() => handleDelete(account.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}
